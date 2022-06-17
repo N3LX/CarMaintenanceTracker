@@ -1,6 +1,12 @@
 #Build database
 cd database
-docker build -t car_maintenance_tracker_database .   
+docker build -t car_maintenance_tracker_database .
+cd ..
+
+#Build cmt-api
+cd CMT\ API/
+mvn clean package -DskipTests
+docker build -t car_maintenance_tracker_api .
 cd ..
 
 #Run the application

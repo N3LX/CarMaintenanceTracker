@@ -1,5 +1,5 @@
 services:
-  db:
+  database:
     container_name: database
     image: car_maintenance_tracker_database
     environment:
@@ -7,3 +7,11 @@ services:
       POSTGRES_PASSWORD: password #TODO: Change in final release
     ports:
       - "5432:5432"
+
+  api:
+    container_name: api
+    image: car_maintenance_tracker_api
+    ports:
+      - "8080:8080"
+    depends_on:
+      - database
