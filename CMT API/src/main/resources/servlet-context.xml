@@ -12,4 +12,6 @@
     <!-- Enable annotation based config -->
     <annotation-driven/>
 
+    <context:property-placeholder location="classpath:application.properties"/>
+
 </beans:beans>
