@@ -6,7 +6,7 @@ CREATE TABLE users (
 CREATE TABLE vehicles (
     id SERIAL NOT NULL PRIMARY KEY,
     custom_name VARCHAR(32),
-    owner_name VARCHAR(32) NOT NULL REFERENCES users (user_name) ,
+    owner_id INT NOT NULL REFERENCES users (id) ,
     make VARCHAR(32) NOT NULL,
     model VARCHAR(32) NOT NULL
 );
