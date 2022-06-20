@@ -33,13 +33,8 @@ public class PostgresJdbcConnectionFactory implements JdbcConnectionFactory {
     }
 
     @Override
-    public Connection getConnection() {
-        try {
-            return DriverManager.getConnection(url, username, password);
-        } catch (SQLException e) {
-            System.out.println(e);
-            return null;
-        }
+    public Connection getConnection() throws SQLException {
+        return DriverManager.getConnection(url, username, password);
     }
 
 }
