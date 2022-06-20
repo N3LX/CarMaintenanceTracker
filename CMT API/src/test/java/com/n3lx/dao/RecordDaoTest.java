@@ -16,6 +16,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath*:servlet-context-test.xml")
@@ -164,7 +165,7 @@ public class RecordDaoTest {
 
         //Check if it was deleted
         assertEquals(1,recordDao.getAll().size());
-        recordDao.get(0);
+        assertNotEquals(recordForDeletion.getId(),recordDao.getAll().get(0).getId());
     }
 
 }
