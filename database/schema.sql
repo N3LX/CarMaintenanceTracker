@@ -32,5 +32,5 @@ INSERT INTO vehicles (custom_name, owner_id, make, model) VALUES
 ('Golf',1,'Volkswagen','Golf V');
 
 INSERT INTO records (vehicle_id,creation_date,mileage,short_description,long_description) VALUES
-(2,CURRENT_DATE, 378000,'Clutch replacement','Clutch and gearbox oil were replaced for total of 3500 PLN');
+(1,CURRENT_DATE, 378000,'Clutch replacement','Clutch and gearbox oil were replaced for total of 3500 PLN');
 */
