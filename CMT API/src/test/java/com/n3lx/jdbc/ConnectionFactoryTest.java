@@ -14,7 +14,7 @@ import java.sql.SQLException;
 public class ConnectionFactoryTest {
 
     @Autowired
-    ConnectionFactory connectionFactory;
+    JdbcConnectionFactory connectionFactory;
 
     /**
      * Tests if the program can establish a connection with database with no exceptions.

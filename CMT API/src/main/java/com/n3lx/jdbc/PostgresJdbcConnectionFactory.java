@@ -11,7 +11,7 @@ import java.sql.SQLException;
  * Class that provides Connection objects that are already configured for use with database.
  */
 @Component
-public class ConnectionFactory {
+public class PostgresJdbcConnectionFactory implements JdbcConnectionFactory {
 
     @Value("${db.url}")
     private String url;
@@ -23,7 +23,7 @@ public class ConnectionFactory {
     private String password;
 
 
-    public ConnectionFactory() {
+    public PostgresJdbcConnectionFactory() {
         //Load the compatible JDBC driver
         try {
             Class.forName("org.postgresql.Driver");
@@ -32,6 +32,7 @@ public class ConnectionFactory {
         }
     }
 
+    @Override
     public Connection getConnection() {
         try {
             return DriverManager.getConnection(url, username, password);
