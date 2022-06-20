@@ -1,4 +1,4 @@
-package com.n3lx.models;
+package com.n3lx.model;
 
 public class User {
 
@@ -20,4 +20,5 @@ public class User {
     public void setUserName(String userName) {
         this.userName = userName;
     }
+
 }

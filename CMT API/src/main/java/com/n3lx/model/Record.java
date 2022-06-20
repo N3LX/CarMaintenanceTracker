@@ -1,4 +1,4 @@
-package com.n3lx.models;
+package com.n3lx.model;
 
 import java.time.LocalDate;
 
@@ -58,4 +58,5 @@ public class Record {
     public void setLongDescription(String longDescription) {
         this.longDescription = longDescription;
     }
+    
 }

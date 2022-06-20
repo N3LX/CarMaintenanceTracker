@@ -1,4 +1,4 @@
-package com.n3lx.models;
+package com.n3lx.model;
 
 public class Vehicle {
 
@@ -47,4 +47,5 @@ public class Vehicle {
     public void setModel(String model) {
         this.model = model;
     }
+
 }
