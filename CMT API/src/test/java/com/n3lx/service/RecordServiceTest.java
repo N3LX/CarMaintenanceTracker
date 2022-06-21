@@ -3,7 +3,6 @@ package com.n3lx.service;
 import com.n3lx.exception.InputValidationException;
 import com.n3lx.jdbc.JdbcConnectionFactory;
 import com.n3lx.model.Record;
-import com.n3lx.service.GenericService;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

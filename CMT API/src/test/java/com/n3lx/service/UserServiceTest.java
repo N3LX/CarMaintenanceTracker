@@ -106,7 +106,7 @@ public class UserServiceTest {
         //Save it
         userService.save(user);
 
-        //Get the latest user from DB and compare it with object that was saved using userDao
+        //Get the latest user from DB and compare it with object that was saved using userService
         User databaseUser = userService.get(3);
         assertEquals(3, databaseUser.getId());
         assertEquals(user.getUserName(), databaseUser.getUserName());
@@ -155,7 +155,7 @@ public class UserServiceTest {
         //Save it
         userService.update(user);
 
-        //Get the latest user from DB and compare it with object that was saved using userDao
+        //Get the latest user from DB and compare it with object that was saved using userService
         User databaseUser = userService.get(2);
         assertEquals(user.getId(), databaseUser.getId());
         assertEquals(user.getUserName(), databaseUser.getUserName());

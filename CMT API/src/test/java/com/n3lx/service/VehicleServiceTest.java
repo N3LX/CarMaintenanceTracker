@@ -335,17 +335,17 @@ public class VehicleServiceTest {
 
         //Test for null custom name
         vehicle.setCustomName(null);
-        assertThrows(InputValidationException.class, () -> vehicleService.save(vehicle));
+        assertThrows(InputValidationException.class, () -> vehicleService.delete(vehicle));
         vehicle.setCustomName(" ");
 
         //Test for null make
         vehicle.setMake(null);
-        assertThrows(InputValidationException.class, () -> vehicleService.save(vehicle));
+        assertThrows(InputValidationException.class, () -> vehicleService.delete(vehicle));
         vehicle.setMake(" ");
 
         //Test for null model
         vehicle.setModel(null);
-        assertThrows(InputValidationException.class, () -> vehicleService.save(vehicle));
+        assertThrows(InputValidationException.class, () -> vehicleService.delete(vehicle));
         vehicle.setModel(" ");
     }
 
