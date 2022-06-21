@@ -1,4 +1,4 @@
-package com.n3lx;
+package com.n3lx.service;
 
 import com.n3lx.exception.InputValidationException;
 import com.n3lx.jdbc.JdbcConnectionFactory;
