@@ -8,13 +8,18 @@ public class CustomSQLException extends SQLException {
         super(message, SQLState);
     }
 
-    public String getHumanReadableMessage() {
+    private String getHumanReadableMessage() {
         switch (this.getSQLState()) {
             case "08001":
                 return "Could not establish the connection to the database, check if your internet connection is up.";
             default:
-                return this.getMessage();
+                return super.getMessage();
         }
+    }
+
+    @Override
+    public String getMessage() {
+        return getHumanReadableMessage();
     }
 
 }
