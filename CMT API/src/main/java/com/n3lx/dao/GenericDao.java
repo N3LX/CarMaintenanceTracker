@@ -5,7 +5,7 @@ import com.n3lx.exception.CustomSQLException;
 import java.util.List;
 
 /**
- * Basic CRUD interface
+ * Basic CRUD DAO interface
  *
  * @param <T> POJO representing an entry in database
  */
