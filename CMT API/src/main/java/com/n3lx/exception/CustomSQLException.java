@@ -1,4 +1,4 @@
-package com.n3lx.jdbc.exception;
+package com.n3lx.exception;
 
 import java.sql.SQLException;
 

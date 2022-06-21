@@ -1,7 +1,7 @@
 package com.n3lx.dao;
 
 import com.n3lx.jdbc.JdbcConnectionFactory;
-import com.n3lx.jdbc.exception.CustomSQLException;
+import com.n3lx.exception.CustomSQLException;
 import com.n3lx.model.User;
 import org.junit.After;
 import org.junit.Before;

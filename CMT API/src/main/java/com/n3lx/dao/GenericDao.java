@@ -1,6 +1,6 @@
 package com.n3lx.dao;
 
-import com.n3lx.jdbc.exception.CustomSQLException;
+import com.n3lx.exception.CustomSQLException;
 
 import java.util.List;
 
