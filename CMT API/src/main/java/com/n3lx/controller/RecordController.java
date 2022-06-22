@@ -26,17 +26,17 @@ public class RecordController {
 
     @RequestMapping(value = "/records", method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
-    public void saveRecords(@RequestBody Record record) throws Exception {
+    public void saveRecord(@RequestBody Record record) throws Exception {
         recordService.save(record);
     }
 
     @RequestMapping(value = "/records", method = RequestMethod.PUT)
-    public void updateRecords(@RequestBody Record record) throws Exception {
+    public void updateRecord(@RequestBody Record record) throws Exception {
         recordService.update(record);
     }
 
     @RequestMapping(value = "/records", method = RequestMethod.DELETE)
-    public void deleteRecords(@RequestBody Record record) throws Exception {
+    public void deleteRecord(@RequestBody Record record) throws Exception {
         recordService.delete(record);
     }
 
