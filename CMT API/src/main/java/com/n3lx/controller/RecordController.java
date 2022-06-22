@@ -3,6 +3,7 @@ package com.n3lx.controller;
 import com.n3lx.model.Record;
 import com.n3lx.service.GenericService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,6 +25,7 @@ public class RecordController {
     }
 
     @RequestMapping(value = "/records", method = RequestMethod.POST)
+    @ResponseStatus(HttpStatus.CREATED)
     public void saveRecords(@RequestBody Record record) throws Exception {
         recordService.save(record);
     }
