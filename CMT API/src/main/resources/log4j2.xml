@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+
+    <Appenders>
+
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %p %m%n"/>
+        </Console>
+
+        <File name="File" fileName="log4j/CMT.log"
+              immediateFlush="true" append="false">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %p %m%n"/>
+        </File>
+
+    </Appenders>
+
+    <Loggers>
+
+        <Root level="ERROR">
+            <AppenderRef ref="Console"/>
+        </Root>
+
+        #Display CMT messages up to INFO level in console
+        <Logger name="com.n3lx" level="INFO">
+            <AppenderRef ref="Console"/>
+        </Logger>
+
+        #Log all CMT messages to a file
+        <Logger name="com.n3lx" level="DEBUG">
+            <AppenderRef ref="File"/>
+        </Logger>
+
+    </Loggers>
+
+</Configuration>
