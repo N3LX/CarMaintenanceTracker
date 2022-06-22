@@ -36,6 +36,7 @@ public class RecordController {
     }
 
     @RequestMapping(value = "/records", method = RequestMethod.DELETE)
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteRecord(@RequestBody Record record) throws Exception {
         recordService.delete(record);
     }

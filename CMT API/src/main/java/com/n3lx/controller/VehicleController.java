@@ -36,6 +36,7 @@ public class VehicleController {
     }
 
     @RequestMapping(value = "/vehicles", method = RequestMethod.DELETE)
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteVehicle(@RequestBody Vehicle vehicle) throws Exception {
         vehicleService.delete(vehicle);
     }

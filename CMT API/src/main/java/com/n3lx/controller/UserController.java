@@ -36,6 +36,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/users", method = RequestMethod.DELETE)
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteUser(@RequestBody User user) throws Exception {
         userService.delete(user);
     }
