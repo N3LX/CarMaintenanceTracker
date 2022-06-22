@@ -3,3 +3,6 @@
 
 #Maven
 target/
+
+#Log4J2
+log4j/
