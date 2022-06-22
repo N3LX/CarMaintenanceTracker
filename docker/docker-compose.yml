@@ -5,8 +5,9 @@ services:
     environment:
       POSTGRES_USER: car_maintenance_tracker
       POSTGRES_PASSWORD: password #TODO: Change in final release
-    ports:
-      - "5432:5432"
+    #Uncomment those 2 lines if you need to access the database from your local machine. Uncomment the line in database/dockerfile as well.
+    #ports: 
+      #- "5432:5432" 
 
   api:
     container_name: api
