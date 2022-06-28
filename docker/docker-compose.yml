@@ -13,7 +13,7 @@ services:
     container_name: api
     image: car_maintenance_tracker_api
     ports:
-      - "8080:8080"
+      - "8008:8080"
     depends_on:
       - database
 
