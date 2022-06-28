@@ -1,9 +1,11 @@
 FROM tomcat:9.0
 
-MAINTAINER n3lx
-
 ARG src="target/cmt-api-1.0.war"
 ARG target="/usr/local/tomcat/webapps/cmt-api.war"
+
+ENV DB_URL=jdbc:postgresql://database:5432/car_maintenance_tracker
+ENV DB_USERNAME=car_maintenance_tracker
+ENV DB_PASSWORD=password
 
 COPY ${src} ${target}
 
