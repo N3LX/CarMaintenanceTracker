@@ -16,3 +16,11 @@ services:
       - "8080:8080"
     depends_on:
       - database
+
+  frontend:
+    container_name: frontend
+    image: car_maintenance_tracker_frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - api
