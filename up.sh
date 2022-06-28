@@ -21,4 +21,5 @@ cd ..
 
 echo "==================================="
 echo "To stop the application run stop.sh"
+echo "To reset it, run down.sh"
 echo "==================================="
