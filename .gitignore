@@ -6,3 +6,6 @@ target/
 
 #Log4J2
 log4j/
+
+#Node.js
+node_modules/
