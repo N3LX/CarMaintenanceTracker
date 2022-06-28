@@ -23,3 +23,9 @@ cd ..
 cd database-test
 docker compose down
 cd ..
+
+#Remove built images
+docker images | grep "car_maintenance_tracker_" | awk '{print $1 ":" $2}' | xargs docker rmi
+
+#Remove unused volumes
+docker volume rm -f $(docker volume ls -f "dangling=true")
