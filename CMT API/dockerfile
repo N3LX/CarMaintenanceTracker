@@ -1,7 +1,5 @@
 FROM tomcat:9.0
 
-MAINTAINER n3lx
-
 ARG src="target/cmt-api-1.0.war"
 ARG target="/usr/local/tomcat/webapps/cmt-api.war"
 
