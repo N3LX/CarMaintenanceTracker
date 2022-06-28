@@ -1,0 +1,9 @@
+services:
+  database:
+    container_name: test_database
+    image: car_maintenance_tracker_database_test
+    environment:
+      POSTGRES_USER: car_maintenance_tracker
+      POSTGRES_PASSWORD: password #TODO: Change in final release
+    ports:
+      - "5432:5432"

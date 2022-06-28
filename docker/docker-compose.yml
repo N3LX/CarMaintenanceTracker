@@ -1,9 +1,18 @@
 services:
-  db:
+  database:
     container_name: database
     image: car_maintenance_tracker_database
     environment:
       POSTGRES_USER: car_maintenance_tracker
       POSTGRES_PASSWORD: password #TODO: Change in final release
+    #Uncomment those 2 lines if you need to access the database from your local machine. Uncomment the line in database/dockerfile as well.
+    #ports: 
+      #- "5432:5432" 
+
+  api:
+    container_name: api
+    image: car_maintenance_tracker_api
     ports:
-      - "5432:5432"
+      - "8080:8080"
+    depends_on:
+      - database

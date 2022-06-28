@@ -1,4 +1,5 @@
 FROM postgres
 WORKDIR /docker-entrypoint-initdb.d
 ADD schema.sql /docker-entrypoint-initdb.d
-EXPOSE 5432
+#Uncomment this line if you need to access the database from your local machine. Uncomment lines in docker/docker-compose.yml as well.
+#EXPOSE 5432
