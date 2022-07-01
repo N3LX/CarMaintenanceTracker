@@ -1,12 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <!--Custom CSS file-->
+    <link rel="stylesheet" href="/css/style.css">
+    <!--Bootstrap icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+
+    <script type="text/javascript" src="/js/collapsible.js" defer></script>
+    <title>Car Maintenance Tracker</title>
 </head>
+
 <body>
-    <h1>This is a main page</h1>
+    <!--Black sidebar on the left of the page-->
+    <div class="sidebar">
+        <h1>Users <i class="bi bi-file-plus"></i></h1>
+        <span><a href="#">User 1</a> <i class="bi bi-pencil"></i> <i class="bi bi-file-minus"></i></i></span>
+        <span><a href="#">User 2</a> <i class="bi bi-pencil"></i> <i class="bi bi-file-minus"></i></i></span>
+        <span><a href="#">User 3</a> <i class="bi bi-pencil"></i> <i class="bi bi-file-minus"></i></i></span>
+        <span><a href="#">User 4</a> <i class="bi bi-pencil"></i> <i class="bi bi-file-minus"></i></i></span>
+    </div>
+
+    <!--Main content of the page-->
+    <div class="main">
+        <div class="main-content">
+            <h1>User #</h1>
+            <br>
+
+            <!--Button that opens record list upon the click for given vehicle-->
+            <button type="button" class="collapsible">
+                Vehicle 1
+                <span>
+                    <i class="bi bi-pencil"></i>
+                    <i class="bi bi-file-minus"></i>
+                </span>
+            </button>
+            <div class="collapsible-content">
+                <p>(Make) (Model)</p>
+                <i class="bi bi-file-plus"></i>
+
+                <!--Singular record entry-->
+                <div class="record">
+                    <p class="record-title">
+                        Record
+                        <span>
+                            <i class="bi bi-pencil"></i>
+                            <i class="bi bi-file-minus"></i>
+                        </span>
+                    </p>
+                    Creation date: 03-07-2022<br />
+                    Mileage: 20000<br />
+                    Short description: Annual service<br />
+                    Long description: Annual service of the car and a very long description that I want to take more
+                    than one line. Hopefully...
+                </div>
+
+                <div class="record">
+                    <p class="record-title">
+                        Record
+                        <span>
+                            <i class="bi bi-pencil"></i>
+                            <i class="bi bi-file-minus"></i>
+                        </span>
+                    </p>
+                    Creation date: 04-07-2022<br />
+                    Mileage: 20500<br />
+                    Short description: Front bumper repair<br />
+                    Long description: Annual service of the car and a very long description that I want to take more
+                    than one line. Once again...
+                </div>
+
+            </div>
+
+            <button type="button" class="collapsible">
+                Vehicle 2
+                <span>
+                    <i class="bi bi-pencil"></i>
+                    <i class="bi bi-file-minus"></i>
+                </span>
+            </button>
+            <div class="collapsible-content">
+                <p>(Make) (Model)</p>
+                <i class="bi bi-file-plus"></i>
+            </div>
+
+            <button type="button" class="collapsible">
+                Vehicle 3
+                <span>
+                    <i class="bi bi-pencil"></i>
+                    <i class="bi bi-file-minus"></i>
+                </span>
+            </button>
+            <div class="collapsible-content">
+                <p>(Make) (Model)</p>
+                <i class="bi bi-file-plus"></i>
+            </div>
+
+        </div>
+    </div>
 </body>
+
 </html>

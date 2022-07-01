@@ -1,0 +1,107 @@
+:root {
+    --alternative-text-color: white;
+
+    /*Sidebar specific constants*/
+    --sidebar-bg-color: #111;
+    --sidebar-element-color: #818181;
+    --sidebar-element-color-hover: #f1f1f1;
+
+    --sidebar-element-padding: 6px 8px 6px 12px;
+    --sidebar-to-main-content-ratio: 20%;
+
+    /*Collapsible specific constants*/
+    --colapsible-inactive-bg-color: #555;
+    --colapsible-active-bg-color: #111;
+
+    /*Record specific constants*/
+    --record-title-bg-color: #111;
+    --record-border-color: #111;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.sidebar {
+    height: 100%;
+    width: var(--sidebar-to-main-content-ratio);
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--sidebar-bg-color);
+}
+
+.sidebar h1 {
+    padding: var(--sidebar-element-padding);
+    color: var(--sidebar-element-color);
+    display: block;
+}
+
+.sidebar a {
+    color: var(--sidebar-element-color);
+    text-decoration: none;
+}
+
+.sidebar span {
+    color: var(--sidebar-element-color);
+    padding: var(--sidebar-element-padding);
+    font-size: 25px;
+    display: block;
+}
+
+.sidebar a:hover {
+    color: var(--sidebar-element-color-hover);
+}
+
+.main {
+    margin-left: var(--sidebar-to-main-content-ratio);
+    font-size: 28px;
+    padding: 0px 10px;
+}
+
+.main-content {
+    text-align: center;
+}
+
+.collapsible {
+    background-color: var(--colapsible-inactive-bg-color);
+    color: var(--alternative-text-color);
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 15px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: x-large;
+}
+
+.active,
+.collapsible:hover {
+    background-color: var(--colapsible-active-bg-color);
+}
+
+.collapsible-content {
+    text-align: center;
+    display: none;
+    overflow: hidden;
+    padding-bottom: 15px;
+}
+
+.record-title {
+    color: var(--alternative-text-color);
+    background-color: var(--record-title-bg-color);
+    margin: 0;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.record {
+    text-align: start;
+    text-justify: auto;
+    border: var(--record-border-color);
+    border-style: solid;
+    margin: 15px;
+}
