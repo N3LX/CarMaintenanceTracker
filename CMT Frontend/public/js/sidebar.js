@@ -26,7 +26,7 @@ function reloadSidebar() {
 
 //Helper function used in reloadSidebar() for parsing data from API
 function userToHTML(user) {
-    return "<span><a href=\"#\" id=user"
+    return "<span><a onClick=\"displayUser(this)\" id=user"
         + user.id
         + ">"
         + user.userName
@@ -38,7 +38,7 @@ function userToHTML(user) {
 
 function editUser(id) {
     //Prompt client for new username
-    newUserName = null
+    var newUserName = null
     while (newUserName == null || newUserName == "") {
         newUserName = prompt("Enter new username:");
         if (newUserName == "") {
@@ -50,7 +50,7 @@ function editUser(id) {
     }
 
     //Prepare JSON payload
-    requestBody = '{"id": ' + id + ',\n'
+    var requestBody = '{"id": ' + id + ',\n'
         + '"userName": "' + newUserName + '"}';
 
     //Prepare PUT request and send it
@@ -69,7 +69,7 @@ function editUser(id) {
             return null;
         }).then(function (json) {
             if (json != null) {
-                errorMessage = "Could not process your request.\n" + json.message;
+                var errorMessage = "Could not process your request.\n" + json.message;
                 alert(errorMessage);
             }
         }).then(function () {
@@ -78,51 +78,60 @@ function editUser(id) {
 }
 
 function deleteUser(id) {
-    currentUserName = document.getElementById("user" + id).innerHTML;
+    var currentUserName = document.getElementById("user" + id).innerHTML;
 
     //Confirm operation
     if (!confirm("Are you sure you want to delete " + currentUserName + " and all of their associated vehicles?")) {
         return;
     }
 
-    /*
-    * TODO:
-    * Record deletion
-    * Vehicle deletion
-    */
-
-    //Delete the user
-
-    //Prepare JSON payload
-    requestBody = '{"id": ' + id + ',\n'
-        + '"userName": "' + currentUserName + '"}';
-
-    fetch(api_url + "users", {
-        method: "delete",
-        body: requestBody,
-        headers: new Headers({
-            'Content-Type': 'application/json'
-        })
-    })
+    fetch(api_url + "vehicles")
         .then(function (apiResponse) {
-            //If the request did not return expected HTTP status check for an error message and display it
-            if (apiResponse.status != 204) {
-                return apiResponse.json();
+            return apiResponse.json();
+        })
+        .then(async function (vehicles) {
+            for (var i = 0; i < vehicles.length; i++) {
+                var vehicle = vehicles[i];
+                if (vehicle.ownerId == id) {
+                    await deleteVehicle(vehicle.id)
+                }
             }
-            return null;
-        }).then(function (json) {
-            if (json != null) {
-                errorMessage = "Could not process your request.\n" + json.message;
-                alert(errorMessage);
-            }
-        }).then(function () {
-            reloadSidebar();
+        })
+        .then(async function () {
+            //Delete the user
+
+            //Prepare JSON payload
+            var requestBody = '{"id": ' + id + ',\n'
+                + '"userName": "' + currentUserName + '"}';
+
+            await fetch(api_url + "users", {
+                method: "delete",
+                body: requestBody,
+                headers: new Headers({
+                    'Content-Type': 'application/json'
+                })
+            })
+                .then(function (apiResponse) {
+                    //If the request did not return expected HTTP status check for an error message and display it
+                    if (apiResponse.status != 204) {
+                        return apiResponse.json();
+                    }
+                    return null;
+                }).then(function (json) {
+                    if (json != null) {
+                        var errorMessage = "Could not process your request.\n" + json.message;
+                        alert(errorMessage);
+                    }
+                }).then(function () {
+                    reloadSidebar();
+                    displayInitialState();
+                })
         })
 }
 
 function addUser() {
     //Prompt client for username
-    userName = null
+    var userName = null
     while (userName == null || userName == "") {
         userName = prompt("Enter username for new user:");
         if (userName == "") {
@@ -134,7 +143,7 @@ function addUser() {
     }
 
     //Prepare JSON payload
-    requestBody = '{"id": ' + 0 + ',\n'
+    var requestBody = '{"id": ' + 0 + ',\n'
         + '"userName": "' + userName + '"}';
 
     //Prepare POST request and send it
@@ -153,7 +162,7 @@ function addUser() {
             return null;
         }).then(function (json) {
             if (json != null) {
-                errorMessage = "Could not process your request.\n" + json.message;
+                var errorMessage = "Could not process your request.\n" + json.message;
                 alert(errorMessage);
             }
         }).then(function () {
