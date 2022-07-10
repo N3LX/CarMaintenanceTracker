@@ -43,7 +43,7 @@ public class VehicleService implements GenericService<Vehicle> {
             throw new InputValidationException("One of parameters is null.");
         }
         if (vehicle.getCustomName().length() > 32) {
-            throw new InputValidationException("\"custom_name\" parameter cannot be a future date.");
+            throw new InputValidationException("\"custom_name\" parameter cannot be longer than 32 characters.");
         }
         if (vehicle.getMake().length() > 32) {
             throw new InputValidationException("\"short_description\" parameter cannot exceed 32 characters.");
@@ -68,7 +68,7 @@ public class VehicleService implements GenericService<Vehicle> {
             throw new InputValidationException("One of parameters is null.");
         }
         if (vehicle.getCustomName().length() > 32) {
-            throw new InputValidationException("\"custom_name\" parameter cannot be a future date.");
+            throw new InputValidationException("\"custom_name\" parameter cannot be longer than 32 characters.");
         }
         if (vehicle.getMake().length() > 32) {
             throw new InputValidationException("\"short_description\" parameter cannot exceed 32 characters.");

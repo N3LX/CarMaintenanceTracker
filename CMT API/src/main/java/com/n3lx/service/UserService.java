@@ -41,7 +41,7 @@ public class UserService implements GenericService<User> {
             throw new InputValidationException("One of parameters is null.");
         }
         if (user.getUserName().length() > 32) {
-            throw new InputValidationException("\"user_name\" parameter cannot be a future date.");
+            throw new InputValidationException("\"user_name\" parameter cannot be longer than 32 characters.");
         }
 
         //Process input
@@ -58,7 +58,7 @@ public class UserService implements GenericService<User> {
             throw new InputValidationException("One of parameters is null.");
         }
         if (user.getUserName().length() > 32) {
-            throw new InputValidationException("\"user_name\" parameter cannot be a future date.");
+            throw new InputValidationException("\"user_name\" parameter cannot be longer than 32 characters.");
         }
 
         //Process input
