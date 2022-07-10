@@ -53,6 +53,10 @@ body {
     color: var(--sidebar-element-color-hover);
 }
 
+.sidebar i:hover {
+    color: var(--sidebar-element-color-hover);
+}
+
 .main {
     margin-left: var(--sidebar-to-main-content-ratio);
     font-size: 28px;
