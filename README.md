@@ -19,6 +19,7 @@ The whole application is divided into 3 Docker containers:
 After cloning the repository make sure that you have following applications installed:
 
 - Docker
+- docker-compose
 - JDK 11 or higher
 - Apache Maven
 - (Preferably) Unix based system

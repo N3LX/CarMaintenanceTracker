@@ -16,7 +16,7 @@ cd ..
 
 #Run the application
 cd docker
-docker compose up -d
+docker-compose up -d
 cd ..
 
 echo "==================================="

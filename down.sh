@@ -2,7 +2,7 @@
 
 #Shut down and remove containers
 cd docker
-docker compose down
+docker-compose down
 cd ..
 
 #Remove built images

@@ -5,7 +5,7 @@ cd ..
 
 #Start it
 cd database-test
-docker compose up -d
+docker-compose up -d
 cd ..
 
 #Wait a reasonable amount of time for docker container to start up
@@ -21,7 +21,7 @@ cd ..
 
 #Stop container
 cd database-test
-docker compose down
+docker-compose down
 cd ..
 
 #Remove built images
