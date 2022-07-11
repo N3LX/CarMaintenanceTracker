@@ -139,7 +139,7 @@ function editVehicle(id) {
     //Prepare JSON payload
     var requestBody = '{"id": ' + id + ',\n'
         + '"customName": "' + customName + '",'
-        + '"ownerId": ' + userId + ','
+        + '"ownerId": ' + currentUserId + ','
         + '"make": "' + make + '",'
         + '"model": "' + model + '"'
         + '}';
