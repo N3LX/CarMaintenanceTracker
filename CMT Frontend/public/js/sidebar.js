@@ -12,6 +12,10 @@ function reloadSidebar() {
             return apiResponse.json();
         })
         .then(function (json) {
+            //Sort json objects by id
+            json.sort(function (a, b) {
+                return a.id - b.id;
+            })
             //Header at the top of the sidebar
             var html = "<h1>Users <i class=\"bi bi-file-plus\" onClick=\"addUser()\"></i></h1>\n";
             //Individual elements

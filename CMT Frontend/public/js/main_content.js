@@ -32,6 +32,10 @@ function displayUser(element) {
             return apiResponse.json();
         })
         .then(async function (json) {
+            //Sort json objects by id
+            json.sort(function (a, b) {
+                return a.id - b.id;
+            })
             //Filter vehicles belonging to user
             for (var i = 0; i < json.length; i++) {
                 var vehicle = json[i];
@@ -66,6 +70,11 @@ async function getRecordsAsHtml(vehicleId) {
     //Get records
     var response = await fetch(api_url + "records");
     var json = await response.json();
+
+    //Sort json objects by id
+    json.sort(function (a, b) {
+        return a.id - b.id;
+    })
 
     var content = "";
     //Filter records belonging to vehicle
