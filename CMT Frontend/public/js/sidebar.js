@@ -18,6 +18,8 @@ function reloadSidebar() {
             })
             //Header at the top of the sidebar
             var html = "<h1>Users <i class=\"bi bi-file-plus\" onClick=\"addUser()\"></i></h1>\n";
+            //Search bar
+            html+="<input type=\"text\" placeholder=\"Search\">\n";
             //Individual elements
             for (var i = 0; i < json.length; i++) {
                 var user = json[i];
