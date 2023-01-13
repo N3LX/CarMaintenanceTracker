@@ -19,7 +19,7 @@ function reloadSidebar() {
             //Header at the top of the sidebar
             var html = "<h1>Users <i class=\"bi bi-file-plus\" onClick=\"addUser()\"></i></h1>\n";
             //Search bar
-            html+="<input type=\"text\" placeholder=\"Search\">\n";
+            html+="<input type=\"text\" placeholder=\"Search\" id=\"sidebarSearchBar\" onkeyup=\"sidebarSearch()\">\n";
             //Individual elements
             for (var i = 0; i < json.length; i++) {
                 var user = json[i];
@@ -174,4 +174,19 @@ function addUser() {
         }).then(function () {
             reloadSidebar();
         })
+}
+
+function sidebarSearch() {
+    var filter = document.getElementById("sidebarSearchBar").value.toUpperCase();
+    var users = document.getElementsByClassName("sidebar")[0].getElementsByTagName("span");
+
+    for(i=0; i<users.length;i++){
+        var a = users[i].getElementsByTagName("a")[0];
+        var txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            users[i].style.display = "";
+        } else {
+            users[i].style.display = "none";
+          }
+    }
 }
