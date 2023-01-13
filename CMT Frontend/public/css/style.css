@@ -37,6 +37,14 @@ body {
     display: block;
 }
 
+.sidebar input {
+    padding: var(--sidebar-element-padding);
+    margin-left: 12px;
+    width: 80%;
+    box-sizing: border-box;
+    display: block;
+}
+
 .sidebar a {
     color: var(--sidebar-element-color);
     text-decoration: none;
